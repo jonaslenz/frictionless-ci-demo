@@ -8,7 +8,7 @@ if st.button("loading from zenodo"):
   st.write(catalog.packages[0].resources[0].to_pandas())
 
 if st.button("loading local"):
-  package = Package("data/data.yml")
+  package = Package("data/data.yaml")
   report = catalog.packages[0].validate()
   st.write(report)
   st.write(catalog.packages[0].resources[0].to_pandas())
