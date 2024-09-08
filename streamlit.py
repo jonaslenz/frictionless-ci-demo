@@ -2,6 +2,10 @@ import streamlit as st
 from frictionless import portals, Package, Catalog
 
 if st.button("loading catalog from zenodo"):
+  control = portals.ZenodoControl(apikey=st.secrets["apikey"])
+  package = Package("https://zenodo.org/record/7078768", control=control)
+  st.write(package)
+if st.button("loading catalog from zenodo"):
   control = portals.ZenodoControl(search='notes:"TDWD"')
   catalog = Catalog(control=control)
   catalog.infer()
