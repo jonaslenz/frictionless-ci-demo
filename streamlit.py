@@ -11,4 +11,4 @@ if st.button("loading local"):
   package = Package("data/data.yaml")
   report = package.validate()
   st.write(report)
-  st.write(package.resources[0].to_pandas())
+  st.write(package.resources[1].to_pandas())
