@@ -1,5 +1,5 @@
 import streamlit as st
-from frictionless import portals, Package
+from frictionless import portals, Package, zenodo
 
 if st.button("loading from zenodo"):
   package = Package("https://zenodo.org/record/7078760")
