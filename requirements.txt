@@ -1,4 +1,3 @@
-frictionless[ckan,csv,excel,json,pandas,sql]==5.15.0
-frictionless[zenodo]>=5.15.0.dev
+frictionless[ckan,zenodo,csv,excel,json,pandas,sql]==5.15.0
 neovim
 streamlit
