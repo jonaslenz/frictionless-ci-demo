@@ -41,7 +41,9 @@ control = portals.ZenodoControl(
     )
 st.write(control)
 if st.button("upload"):
+  try:
     deposition_id = package.publish(control=control)
     st.write(deposition_id)
-
+  except Exception as e:
+    st.warning(e)
 
