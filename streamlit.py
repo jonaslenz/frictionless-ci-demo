@@ -27,11 +27,13 @@ if st.button("loading from zenodo"):
   st.write(report)
   st.write(catalog.packages[0].resources[0].to_pandas())
 
-if st.button("loading local"):
-  st.session_state.package = Package("data/data.yaml")
-  report = package.validate()
-  st.write(report)
-  st.write(package.resources[1].to_pandas())
+with st.expander("show less"):
+  if st.button("loading local"):
+    st.session_state.package = Package("data/data.yaml")
+    report = st.session_state.package.validate()
+    st.write(report)
+    st.write(st.session_state.package.resources[1].to_pandas())
+#    st.session_state.resources = [st.session_state.resources[1]]
 
 
 control = portals.ZenodoControl(
