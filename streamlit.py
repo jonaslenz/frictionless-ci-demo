@@ -41,7 +41,7 @@ control = portals.ZenodoControl(
         apikey=st.secrets["apikey"],
         base_url="https://sandbox.zenodo.org/api/"
     )
-st.write(control)
+
 if st.button("upload"):
   try:
     deposition_id = st.session_state.package.publish(control=control)
