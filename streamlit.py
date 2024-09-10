@@ -32,3 +32,15 @@ if st.button("loading local"):
   report = package.validate()
   st.write(report)
   st.write(package.resources[1].to_pandas())
+
+
+control = portals.ZenodoControl(
+        metafn="zenodometa.json",
+        apikey=st.secrets["apikey"],
+        base_url="https://sandbox.zenodo.org/api/"
+    )
+if st.button("upload"):
+    deposition_id = package.publish(control=control)
+    st.write(deposition_id)
+
+
