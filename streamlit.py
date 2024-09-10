@@ -28,7 +28,7 @@ if st.button("loading from zenodo"):
   st.write(catalog.packages[0].resources[0].to_pandas())
 
 if st.button("loading local"):
-  package = Package("data/data.yaml")
+  st.session_state.package = Package("data/data.yaml")
   report = package.validate()
   st.write(report)
   st.write(package.resources[1].to_pandas())
@@ -42,7 +42,7 @@ control = portals.ZenodoControl(
 st.write(control)
 if st.button("upload"):
   try:
-    deposition_id = package.publish(control=control)
+    deposition_id = st.session_state.package.publish(control=control)
     st.write(deposition_id)
   except Exception as e:
     st.warning(e)
